@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="instructor-ui" style="background-color: #2E2E2E; padding: 20px; border-radius: 8px; color: #FFFFFF;">
+    <h2 style="color: #FFFFFF;">受講者管理</h2>
+    <p>以下は、あなたのレッスンに登録している受講者の一覧です。</p>
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">名前</th>
+                <th scope="col">メールアドレス</th>
+                <th scope="col">支払い状況</th>
+                <th scope="col">レッスン登録状況</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td>{{ student.name }}</td>
+                <td>{{ student.email }}</td>
+                <td>
+                    {% if student.payment_status == 'paid' %}
+                    <span class="badge badge-success">支払済み</span>
+                    {% else %}
+                    <span class="badge badge-danger">未払い</span>
+                    {% endif %}
+                </td>
+                <td>{{ student.lessons | length }} レッスン</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

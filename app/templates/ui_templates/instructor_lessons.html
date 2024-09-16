@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="instructor-ui" style="background-color: #2E2E2E; padding: 20px; border-radius: 8px; color: #FFFFFF;">
+    <h2 style="color: #FFFFFF;">レッスン管理</h2>
+    <p>以下は、あなたが作成したレッスンの一覧です。</p>
+    <ul>
+        {% for lesson in lessons %}
+        <li>
+            {{ lesson.date.strftime("%Y-%m-%d") }} at {{ lesson.location }} - ${{ lesson.price }}
+            <form action="/refund/{{ lesson.id }}" method="POST" style="display:inline;">
+                <button type="submit" class="btn btn-warning">返金</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

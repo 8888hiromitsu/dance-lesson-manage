@@ -1,0 +1,44 @@
+
+/* ベースとなるスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2E2E2E;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #F28E2B;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #424242;
+    color: #FFFFFF;
+}
+
+.btn-primary {
+    background-color: #4E79A7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #3A5C80;
+}

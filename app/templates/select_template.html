@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>テンプレート選択</h2>
+<p>受講者が見るUIのテンプレートを選択してください。</p>
+<form method="POST" action="{{ url_for('select_template') }}">
+    <div class="form-group">
+        <label for="template">テンプレートを選択:</label>
+        <select id="template" name="template" class="form-control">
+            <option value="template1">テンプレート1 - シンプルデザイン</option>
+            <option value="template2">テンプレート2 - 画像背景あり</option>
+            <option value="template3">テンプレート3 - モダンデザイン</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">適用</button>
+</form>
+{% endblock %}

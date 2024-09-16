@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="instructor-ui" style="background-color: #2E2E2E; padding: 20px; border-radius: 8px; color: #FFFFFF;">
+    <h2 style="color: #FFFFFF;">提案と分析</h2>
+    <p>以下は、最近のレッスンに関する分析結果と改善提案です。</p>
+    <div class="proposal" style="margin-top: 20px; padding: 15px; background-color: #424242; border-radius: 8px;">
+        <h3 style="color: #F28E2B;">改善提案</h3>
+        <p>{{ proposal }}</p>
+    </div>
+    <div class="chart" style="margin-top: 20px;">
+        {{ chart|safe }}
+    </div>
+</div>
+{% endblock %}
